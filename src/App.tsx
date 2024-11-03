@@ -1,7 +1,6 @@
 import React from 'react';
 import PokemonCard from './components/PokemonCard';
 
-// Liste de Pokémon
 const pokemonList = [
   {
     name: "bulbasaur",
@@ -9,11 +8,10 @@ const pokemonList = [
   },
   {
     name: "mew",
-    imgSrc: null,
+    imgSrc: undefined,
   },
 ];
 
-// Composant App
 const App: React.FC = () => {
   return (
     <div>

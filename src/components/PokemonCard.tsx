@@ -1,9 +1,13 @@
 import React from 'react';
 
-// Composant PokemonCard avec déstructuration des props
-const PokemonCard: React.FC<{ pokemon: { name: string; imgSrc?: string | null } }> = ({ pokemon }) => {
-  // Suppression de console.log(props)
-  
+interface PokemonProps {
+  pokemon: {
+    name: string;
+    imgSrc?: string; 
+  };
+}
+
+const PokemonCard: React.FC<PokemonProps> = ({ pokemon }) => {
   return (
     <figure>
       {pokemon.imgSrc ? (
@@ -17,3 +21,4 @@ const PokemonCard: React.FC<{ pokemon: { name: string; imgSrc?: string | null } 
 };
 
 export default PokemonCard;
+
