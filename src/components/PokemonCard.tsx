@@ -1,4 +1,3 @@
-// src/components/PokemonCard.tsx
 import React from 'react';
 
 const PokemonCard: React.FC = () => {

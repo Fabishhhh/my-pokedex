@@ -1,5 +1,3 @@
-// src/components/MyTitle.tsx
-
 import React from "react";
 
 const MyTitle: React.FC = () => {
@@ -7,3 +5,4 @@ const MyTitle: React.FC = () => {
 };
 
 export default MyTitle;
+
