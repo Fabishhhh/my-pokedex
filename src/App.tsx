@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PokemonCard from './components/PokemonCard';
 
 const pokemonList = [
@@ -13,11 +13,31 @@ const pokemonList = [
 ];
 
 const App: React.FC = () => {
+  const [pokemonIndex, setPokemonIndex] = useState(0);
+
+  const nextPokemon = () => {
+    setPokemonIndex((prevIndex) => (prevIndex + 1) % pokemonList.length);
+  };
+
+  const previousPokemon = () => {
+    setPokemonIndex((prevIndex) => (prevIndex - 1 + pokemonList.length) % pokemonList.length);
+  };
+
   return (
     <div>
-      {pokemonList.map((pokemon, index) => (
-        <PokemonCard key={index} pokemon={pokemon} />
-      ))}
+      <PokemonCard pokemon={pokemonList[pokemonIndex]} />
+      <div>
+        {pokemonIndex > 0 && (
+          <button onClick={previousPokemon}>
+            Précédent
+          </button>
+        )}
+        {pokemonIndex < pokemonList.length - 1 && (
+          <button onClick={nextPokemon}>
+            Suivant
+          </button>
+        )}
+      </div>
     </div>
   );
 };
